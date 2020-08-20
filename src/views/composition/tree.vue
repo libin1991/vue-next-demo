@@ -16,7 +16,7 @@ const treeData = {
   name: 'My Tree',
   children: [
     { name: 'hello' },
-    { name: 'wat' },
+    { name: 'wat2' },
     {
       name: 'child folder',
       children: [
