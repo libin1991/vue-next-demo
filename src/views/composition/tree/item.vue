@@ -18,20 +18,28 @@
     </ul>
   </li>
 </template>
-<script>
-import { defineComponent, reactive, computed, toRefs } from 'vue'
-import { set, get } from 'vue-reactivity-with-polyfill'
+<script lang="ts">
+import { defineComponent, reactive, computed, toRefs, PropType } from 'vue'
+import { get, set } from 'vue-reactivity-with-polyfill'
+
+type Model = {
+  name: string,
+  children?: Model[]
+}
 
 export default defineComponent({
   name: 'TreeItem', // necessary for self-reference
   props: {
-    model: Object
+    model: {
+      type: Object as PropType<Model>,
+      required: true
+    }
   },
   setup (props) {
     const state = reactive({
       open: false,
-      isFolder: computed(() => {
-        return get(props.model, 'children.length')
+      isFolder: computed<number | undefined>(() => {
+        return get(props.model, ['children', 'length'])
       })
     })
 
@@ -41,7 +49,7 @@ export default defineComponent({
 
     function addChild () {
       /* eslint-disable vue/no-mutating-props */
-      props.model.children.push({ name: 'new stuff', children: [] })
+      props.model.children!.push({ name: 'new stuff' })
     }
 
     function changeType () {
