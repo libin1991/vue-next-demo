@@ -23,8 +23,8 @@ import { defineComponent, reactive, computed, toRefs, PropType } from 'vue'
 import { get, set } from 'vue-reactivity-with-polyfill'
 
 type Model = {
-  name: string,
-  children?: Model[]
+  name: string;
+  children?: Model[];
 }
 
 export default defineComponent({
