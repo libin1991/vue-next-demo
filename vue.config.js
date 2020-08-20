@@ -1,6 +1,6 @@
 module.exports = {
   outputDir: 'docs',
-  publicPath: '/vue-next-demo/docs/',
+  publicPath: '/vue-next-demo/',
   transpileDependencies: [/@vue\/.*/],
   chainWebpack: config => {
     config
