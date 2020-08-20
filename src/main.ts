@@ -18,6 +18,9 @@ function handlePolyfillProxy (instance = getCurrentInstance() as any, ...props: 
   if (getter) {
     props.forEach((prop) => {
       Object.keys(prop).forEach((k) => {
+        if (k === '_') {
+          return
+        }
         def(proxy, k, {
           get: getter.bind(target, k),
           set: setter.bind(target, k)
