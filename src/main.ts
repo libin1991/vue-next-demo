@@ -32,11 +32,27 @@ function handlePolyfillProxy (instance = getCurrentInstance() as any, ...props: 
   return false
 }
 
+const publicPropertiesMap = {
+  $: 1,
+  $el: 1,
+  $data: 1,
+  $props: 1,
+  $attrs: 1,
+  $slots: 1,
+  $refs: 1,
+  $parent: 1,
+  $root: 1,
+  $emit: 1,
+  $options: 1,
+  $forceUpdate: 1,
+  $nextTick: 1,
+  $watch: 1
+}
+
 const myMixin = defineComponent({
   beforeCreate () {
     const instance = getCurrentInstance() as any
-    // todo publicPropertiesMap
-    handlePolyfillProxy(instance, instance.props, instance.setupState, instance.appContext.config.globalProperties)
+    handlePolyfillProxy(instance, instance.props, instance.setupState, instance.appContext.config.globalProperties, publicPropertiesMap)
   },
   created () {
     const instance = getCurrentInstance() as any
