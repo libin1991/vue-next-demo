@@ -1,7 +1,7 @@
 import { createApp, getCurrentInstance, defineComponent, toRaw } from 'vue'
 import 'whatwg-fetch'
 import App from './App.vue'
-import router from './router'
+// import router from './router'
 
 function def (obj: any, key: string, attrs: object) {
   Object.defineProperty(obj, key, {
@@ -72,8 +72,4 @@ const app = createApp(App, {
   xRoot: 2
 })
 
-app.mixin(myMixin).use(router).mount('#app')
-
-Object.defineProperty(self, 'appp', {
-  value: app
-})
+app.mixin(myMixin).mount('#app')

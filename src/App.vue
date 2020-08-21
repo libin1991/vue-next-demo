@@ -3,25 +3,40 @@
     <!-- <pre>{{$attrs}}</pre> -->
     <!-- <pre>{{$route}}</pre> -->
     <div id="nav">
-      <router-link to="/" >/</router-link>
-      <router-link v-for="conf in routes" :key="conf.path" :to="conf.path" >{{ conf.path }}</router-link>
+      <a href="javascript:;" @click="goto('/')">/</a>
+      <a href="javascript:;" v-for="conf in routes" :key="conf.path"  @click="goto(conf.path)">{{ conf.path }}</a>
     </div>
-    <router-view/>
+    <component :is="view" />
     <div id="modal-container"></div>
   </div>
 </template>
 
 <script>
-import { defineComponent, reactive } from 'vue'
+import { defineComponent, reactive, computed, ref } from 'vue'
 import compositionConf from './router/composition'
 import classicConf from './router/classic'
 import transitionConf from './router/transition'
 
 export default defineComponent({
   setup () {
+    const current = ref('/')
     const routes = reactive(compositionConf.concat(classicConf, transitionConf))
+    const view = computed(() => {
+      let currentComponent = ''
+      routes.forEach((route) => {
+        if (route.path === current.value) {
+          currentComponent = route.component
+        }
+      })
+      return currentComponent
+    })
+    function goto (path) {
+      current.value = path
+    }
     return {
-      routes
+      routes,
+      view,
+      goto
     }
   }
 })
