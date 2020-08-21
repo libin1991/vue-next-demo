@@ -1,10 +1,10 @@
 module.exports = {
   outputDir: 'docs',
   publicPath: '/vue-next-demo/',
-  transpileDependencies: [/@vue\/.*/, 'vue-router'],
+  transpileDependencies: [/@vue\/.*/, 'vue-router', 'vue'],
   chainWebpack: config => {
-    config
-      .devtool(false)
+    // config
+    //   .devtool(false)
     config.resolve.alias.set('@vue/reactivity', 'vue-reactivity-with-polyfill')
     config.optimization.minimizers.delete('terser')
   }

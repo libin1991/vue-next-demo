@@ -1,4 +1,5 @@
 import { createApp, getCurrentInstance, defineComponent, toRaw } from 'vue'
+import 'whatwg-fetch'
 import App from './App.vue'
 import router from './router'
 
@@ -17,6 +18,7 @@ function handlePolyfillProxy (instance = getCurrentInstance() as any, ...props: 
   const target = toRaw(proxy)
   if (getter) {
     props.forEach((prop) => {
+      console.log('xx', prop)
       Object.keys(prop).forEach((k) => {
         if (k === '_') {
           return
@@ -71,3 +73,7 @@ const app = createApp(App, {
 })
 
 app.mixin(myMixin).use(router).mount('#app')
+
+Object.defineProperty(self, 'appp', {
+  value: app
+})

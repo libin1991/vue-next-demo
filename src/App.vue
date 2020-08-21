@@ -32,13 +32,12 @@ export default defineComponent({
   a
     display block
 /* reset */
-html body {
-  font-size: 16px;
-  line-height: unset;
-  background: unset;
-  color:unset;
-  min-width: 0;
-  max-width: none;
-  margin: auto;
-}
+html body
+  font-size: 16px
+  line-height: unset
+  background: unset
+  color: unset
+  min-width: 0
+  max-width: none
+  margin: auto
 </style>
