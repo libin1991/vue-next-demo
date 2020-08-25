@@ -40,7 +40,6 @@ export default defineComponent({
       fetch(`${API_URL}${currentBranch.value}`)
         .then(res => res.json())
         .then(data => {
-          console.log(data)
           if (Array.isArray(data)) {
             commits.value = data
           } else {
