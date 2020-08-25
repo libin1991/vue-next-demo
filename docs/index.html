@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><link rel=icon href=/favicon.ico><title>vue-next-demo</title><script src=//cdn.bootcdn.net/ajax/libs/dom4/3.0.0/dom4.js></script><link href=/css/app.30aaac03.css rel=preload as=style><link href=/css/chunk-vendors.ba7832ed.css rel=preload as=style><link href=/js/app.5cb21bea.js rel=preload as=script><link href=/js/chunk-vendors.39bddabf.js rel=preload as=script><link href=/css/chunk-vendors.ba7832ed.css rel=stylesheet><link href=/css/app.30aaac03.css rel=stylesheet></head><body><noscript><strong>We're sorry but vue-next-demo doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id=app></div><script>// self.Promise = undefined
+<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><link rel=icon href=/favicon.ico><title>vue-next-demo</title><script src=//cdn.bootcdn.net/ajax/libs/dom4/3.0.0/dom4.js></script><link href=/css/app.122a86a3.css rel=preload as=style><link href=/css/chunk-vendors.ba7832ed.css rel=preload as=style><link href=/js/app.96938860.js rel=preload as=script><link href=/js/chunk-vendors.b2b1d6c7.js rel=preload as=script><link href=/css/chunk-vendors.ba7832ed.css rel=stylesheet><link href=/css/app.122a86a3.css rel=stylesheet></head><body><noscript><strong>We're sorry but vue-next-demo doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id=app></div><script>// self.Promise = undefined
     // self.MutationObserver = undefined
     // self.WebKitMutationObserver = undefined
     self.Symbol = undefined
@@ -8,4 +8,15 @@
     self.Map = undefined
     self.WeakSet = undefined
     self.WeakMap = undefined
-    // new VConsole()</script><script src=/js/chunk-vendors.39bddabf.js></script><script src=/js/app.5cb21bea.js></script></body></html>
+    // new VConsole()
+    Function.prototype.bind = function (context) {
+      if (context && context.branches) {
+        debugger
+      }
+      var originFn = this;
+      var args = [].slice.call(arguments).slice(1);
+      return function () {
+        var newArgs = [].slice.call(arguments)
+        return originFn.apply(context, args.concat(newArgs))
+      }
+    }</script><script src=/js/chunk-vendors.b2b1d6c7.js></script><script src=/js/app.96938860.js></script></body></html>
