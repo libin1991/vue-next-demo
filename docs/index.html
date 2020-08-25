@@ -8,15 +8,4 @@
     self.Map = undefined
     self.WeakSet = undefined
     self.WeakMap = undefined
-    // new VConsole()
-    Function.prototype.bind = function (context) {
-      if (context && context.branches) {
-        debugger
-      }
-      var originFn = this;
-      var args = [].slice.call(arguments).slice(1);
-      return function () {
-        var newArgs = [].slice.call(arguments)
-        return originFn.apply(context, args.concat(newArgs))
-      }
-    }</script><script src=/vue-next-demo/js/chunk-vendors.b2b1d6c7.js></script><script src=/vue-next-demo/js/app.f3281680.js></script></body></html>
+    // new VConsole()</script><script src=/vue-next-demo/js/chunk-vendors.b2b1d6c7.js></script><script src=/vue-next-demo/js/app.f3281680.js></script></body></html>
