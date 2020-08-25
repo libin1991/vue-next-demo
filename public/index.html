@@ -15,9 +15,9 @@
     </noscript>
     <div id="app"></div>
     <script>
-    self.Promise = undefined
-    self.MutationObserver = undefined
-    self.WebKitMutationObserver = undefined
+    // self.Promise = undefined
+    // self.MutationObserver = undefined
+    // self.WebKitMutationObserver = undefined
     self.Symbol = undefined
     self.Proxy = undefined
     self.Reflect = undefined
@@ -26,6 +26,17 @@
     self.WeakSet = undefined
     self.WeakMap = undefined
     // new VConsole()
+    Function.prototype.bind = function (context) {
+      if (context && context.branches) {
+        debugger
+      }
+      var originFn = this;
+      var args = [].slice.call(arguments).slice(1);
+      return function () {
+        var newArgs = [].slice.call(arguments)
+        return originFn.apply(context, args.concat(newArgs))
+      }
+    }
     </script>
 
     <!-- built files will be auto injected -->

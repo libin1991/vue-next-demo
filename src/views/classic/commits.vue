@@ -1,15 +1,14 @@
 <template>
   <div class="commitsapp">
     <h1>Latest Vue.js Commits</h1>
-    <template v-for="branch in branches">
+    <div v-for="branch in branches" :key="branch">
       <input type="radio"
         :id="branch"
         :value="branch"
-        :key="branch"
         name="branch"
         v-model="currentBranch">
-      <label :for="branch" :key="'l' + branch">{{ branch }}</label>
-    </template>
+      <label :for="branch">{{ branch }}</label>
+    </div>
     <p>vuejs/vue@{{ currentBranch }}</p>
     <ul>
       <li v-for="{ html_url, sha, author, commit } in commits" :key="sha">
@@ -29,7 +28,7 @@ export default defineComponent({
   data: () => ({
     branches: ['master', 'sync'],
     currentBranch: 'master',
-    commits: null
+    commits: []
   }),
 
   created () {

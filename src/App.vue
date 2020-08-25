@@ -3,7 +3,6 @@
     <!-- <pre>{{$attrs}}</pre> -->
     <!-- <pre>{{$route}}</pre> -->
     <div id="nav">
-      <a href="javascript:;" @click="goto('/')">/</a>
       <a href="javascript:;" v-for="conf in routes" :key="conf.path"  @click="goto(conf.path)">{{ conf.path }}</a>
     </div>
     <component :is="view" />
@@ -12,7 +11,7 @@
 </template>
 
 <script>
-import { defineComponent, reactive, computed, ref } from 'vue'
+import { defineComponent, reactive, computed, ref, markRaw } from 'vue'
 import compositionConf from './router/composition'
 import classicConf from './router/classic'
 import transitionConf from './router/transition'
@@ -20,7 +19,7 @@ import transitionConf from './router/transition'
 export default defineComponent({
   setup () {
     const current = ref('/')
-    const routes = reactive(compositionConf.concat(classicConf, transitionConf))
+    const routes = reactive(markRaw([{ path: '/' }].concat(compositionConf, classicConf, transitionConf)))
     const view = computed(() => {
       let currentComponent = ''
       routes.forEach((route) => {
