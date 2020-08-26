@@ -20,7 +20,7 @@
 </template>
 <script>
 import { defineComponent } from 'vue'
-import { set, get } from 'vue-reactivity-with-polyfill'
+import { set, get } from 'vue-reactivity-polyfill'
 
 export default defineComponent({
   name: 'TreeItem', // necessary for self-reference

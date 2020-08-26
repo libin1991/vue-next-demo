@@ -20,7 +20,7 @@
 </template>
 <script lang="ts">
 import { defineComponent, reactive, computed, toRefs, PropType } from 'vue'
-import { get, set } from 'vue-reactivity-with-polyfill'
+import { get, set } from 'vue-reactivity-polyfill'
 
 type Model = {
   name: string;
