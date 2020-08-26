@@ -13,7 +13,7 @@
     "marked": "^1.1.1",
     "todomvc-app-css": "^2.3.0",
     "vue": "^3.0.0-rc.8",
-    "vue-reactivity-polyfill": "^0.0.1",
+    "vue-reactivity-polyfill": "0.0.2",
     "vue-router": "^4.0.0-alpha.6",
     "vue3-plugin-polyfill": "^0.0.3",
     "whatwg-fetch": "^3.4.0"
