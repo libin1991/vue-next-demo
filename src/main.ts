@@ -1,5 +1,4 @@
 import 'whatwg-fetch'
-import 'core-js/es/symbol'
 import 'vue-reactivity-polyfill-getownpropertynames'
 import { createApp } from 'vue'
 import 'vue-reactivity-polyfill'
