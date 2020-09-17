@@ -1,6 +1,6 @@
 import 'whatwg-fetch'
-import { createApp } from 'vue'
 import 'vue-reactivity-polyfill-getownpropertynames'
+import { createApp } from 'vue'
 import 'vue-reactivity-polyfill'
 import { createPolyfillPlugin } from 'vue3-plugin-polyfill'
 import App from './App.vue'
