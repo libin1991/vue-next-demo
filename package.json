@@ -13,9 +13,10 @@
     "marked": "^1.1.1",
     "todomvc-app-css": "^2.3.0",
     "vue": "^3.0.0-rc.12",
-    "vue-reactivity-polyfill": "0.0.4",
+    "vue-reactivity-polyfill": "^0.1.0",
+    "vue-reactivity-polyfill-getownpropertynames": "0.0.1",
     "vue-router": "^4.0.0-alpha.6",
-    "vue3-plugin-polyfill": "0.0.4",
+    "vue3-plugin-polyfill": "^0.1.0",
     "whatwg-fetch": "^3.4.0"
   },
   "devDependencies": {
@@ -26,7 +27,7 @@
     "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-plugin-typescript": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
-    "@vue/compiler-sfc": "^3.0.0-rc.9",
+    "@vue/compiler-sfc": "^3.0.0-rc.12",
     "@vue/eslint-config-standard": "^5.1.2",
     "@vue/eslint-config-typescript": "^5.0.2",
     "eslint": "^6.7.2",
