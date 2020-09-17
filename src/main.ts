@@ -1,5 +1,5 @@
-import 'vue-reactivity-polyfill'
 import 'whatwg-fetch'
+import 'vue-reactivity-polyfill'
 import { createApp } from 'vue'
 import { createPolyfillPlugin } from 'vue3-plugin-polyfill'
 import App from './App.vue'
